@@ -16,7 +16,7 @@ public class Main {
     IO.Options opts = new IO.Options();
     opts.forceNew = true;
     opts.reconnection = false;
-    opts.query = "user_email=" + "" + "&user_token=" + "" + "&shop_id=608";
+    opts.query = "user_email=" + "" + "&user_token=" + "" + "&shop_id=" + "";
     opts.path = "/sensor.io";
 
     socket = IO.socket("https://station5.walkinishgts.com/api/shops/signals", opts);
