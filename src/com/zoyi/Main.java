@@ -19,12 +19,24 @@ public class Main {
     opts.query = "user_email=" + "" + "&user_token=" + "" + "&shop_id=" + "";
     opts.path = "/sensor.io";
 
-    socket = IO.socket("https://station5.walkinishgts.com/api/shops/signals", opts);
+    socket = IO.socket("https://station5.walkinsights.com/api/shops/signals", opts);
 
     socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
       @Override
       public void call(Object... args) {
         System.out.println("connected");
+      }
+    }).on(Socket.EVENT_CONNECT_ERROR, new Emitter.Listener() {
+      @Override
+      public void call(Object... args) {
+        System.out.println("fail to connect");
+      }
+    }).on(Socket.EVENT_ERROR, new Emitter.Listener() {
+      @Override
+      public void call(Object... args) {
+        System.out.println("error");
+        System.out.println(args[0]);
+        socket.close();
       }
     }).on(Socket.EVENT_DISCONNECT, new Emitter.Listener() {
       @Override
