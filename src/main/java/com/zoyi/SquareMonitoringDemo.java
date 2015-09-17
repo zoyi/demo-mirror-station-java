@@ -18,10 +18,10 @@ public class SquareMonitoringDemo {
     IO.Options opts = new IO.Options();
     opts.forceNew = true;
     opts.reconnection = true;   // if you want to automatically reconnect, set true.
-    opts.query = "user_email=" + "huy@zoyi.co" +
-        "&user_token=" + "ks_UDufpZSssX9z_sRH5" +
-        "&square_mac=" + "f4fd2b1025ea" +
-        "&mac=" + "60f81df0a844";
+    opts.query = "user_email=" + "" +
+        "&user_token=" + "" +
+        "&square_mac=" + "" +
+        "&mac=" + "";
     //a078baf1c33a
     opts.path = ApplicationHelper.getSensorPath();
 

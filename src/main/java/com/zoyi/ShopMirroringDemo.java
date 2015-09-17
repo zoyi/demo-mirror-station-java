@@ -16,9 +16,9 @@ public class ShopMirroringDemo {
     IO.Options opts = new IO.Options();
     opts.forceNew = true;
     opts.reconnection = true;
-    opts.query = "user_email=" + "huy@zoyi.co" +
-        "&user_token=" + "ks_UDufpZSssX9z_sRH5" +
-        "&shop_id=" + "574";
+    opts.query = "user_email=" + "" +
+        "&user_token=" + "" +
+        "&shop_id=" + "";
     opts.path = ApplicationHelper.getSensorPath();
 
     socket = IO.socket(ApplicationHelper.getShopMirroingURL(), opts);
