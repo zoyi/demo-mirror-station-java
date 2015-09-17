@@ -7,19 +7,25 @@ import org.json.JSONObject;
 
 import java.net.URISyntaxException;
 
-public class Main {
-
+/**
+ * Created by huy on 15. 9. 17..
+ */
+public class SquareMonitoringDemo {
   public static void main(String[] args) throws URISyntaxException {
     // write your code here
     final Socket socket;
 
     IO.Options opts = new IO.Options();
     opts.forceNew = true;
-    opts.reconnection = false;
-    opts.query = "user_email=" + "" + "&user_token=" + "" + "&shop_id=" + "";
-    opts.path = "/sensor.io";
+    opts.reconnection = true;   // if you want to automatically reconnect, set true.
+    opts.query = "user_email=" + "huy@zoyi.co" +
+        "&user_token=" + "ks_UDufpZSssX9z_sRH5" +
+        "&square_mac=" + "f4fd2b1025ea" +
+        "&mac=" + "60f81df0a844";
+    //a078baf1c33a
+    opts.path = ApplicationHelper.getSensorPath();
 
-    socket = IO.socket("https://station5.walkinsights.com/api/shops/signals", opts);
+    socket = IO.socket(ApplicationHelper.getSquareMonitoringURL(), opts);
 
     socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
       @Override
@@ -43,11 +49,11 @@ public class Main {
       public void call(Object... args) {
         System.out.println("disconnected");
       }
-    }).on("signal", new Emitter.Listener() {
-
+    }).on(ApplicationHelper.SIGNAL_EVENT, new Emitter.Listener() {
+      // Listen to monitoring event.
       @Override
       public void call(Object... args) {
-        JSONObject obj = (JSONObject)args[0];
+        JSONObject obj = (JSONObject) args[0];
         System.out.println(obj);
       }
 

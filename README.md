@@ -1,9 +1,9 @@
-# demo-mirror-station-java
+# demo-station-java
 
 
 ## 환경설정
 
-Main 클래스 코드를 참조하여 아래 인증 정보를 입력 합니다.
+각 데모 클래스 코드를 참조하여 아래 인증 정보를 입력 합니다.
 
 ```java
 opts.query = "user_email=" + "[메일주소]" + "&user_token=" + "[인증토큰]" + "&shop_id=" + "[샵번호]";
@@ -22,3 +22,16 @@ opts.query = "user_email=" + "[메일주소]" + "&user_token=" + "[인증토큰]
 {"square_mac":"f4fd2b102606","ts":1438325027784,"device_id":"e89fa04fea3056ce59bd94d0684ecbe2","rssi":-59}
 ...
 ```
+
+
+## ShopMirroringDemo
+
+해당 샵의 모든 시그널을 받는 API
+
+## ShopMonitoringDemo
+
+해당 샵의 특정(target)맥 어드레스만 받는 API
+
+## SquareMonitoringDemo
+
+해당 스퀘어의 특정(target)맥 어드레스만 받는 API
