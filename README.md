@@ -36,9 +36,10 @@ opts query는 아래와 같이 4개 필드 모두 설정 되어야 합니다.
 ```
 opts.query = "user_email=" + "" +
              "&user_token=" + "" +
-             "&shop_id=" + "" +
-             "&mac=" + "";
+             "&shop_id=" + "1" +
+             "&mac=" + "001122aabbcc";
 ```
+맥어드레스 포맷은 ':'을 제외, 소문자 형태입니다.
 
 ## SquareMonitoringDemo
 
@@ -48,6 +49,7 @@ opts query는 아래와 같이 4개 필드 모두 설정 되어야 합니다.
 ```
 opts.query = "user_email=" + "" +
              "&user_token=" + "" +
-             "&square_mac=" + "" +
-             "&mac=" + "";
+             "&square_mac=" + "f4fd2b100000" +
+             "&mac=" + "001122aabbcc";
 ```
+맥어드레스 포맷은 ':'을 제외, 소문자 형태입니다.
