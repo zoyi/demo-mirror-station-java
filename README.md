@@ -31,7 +31,23 @@ opts.query = "user_email=" + "[메일주소]" + "&user_token=" + "[인증토큰]
 ## ShopMonitoringDemo
 
 해당 샵의 특정(target)맥 어드레스만 받는 API
+ShopMirroringDemo와 다르게 특정 맥어드레스만 필터링 되지 않은 실시간 데이터를 받게됩니다.
+opts query는 아래와 같이 4개 필드 모두 설정 되어야 합니다.
+```
+opts.query = "user_email=" + "" +
+             "&user_token=" + "" +
+             "&shop_id=" + "" +
+             "&mac=" + "";
+```
 
 ## SquareMonitoringDemo
 
 해당 스퀘어의 특정(target)맥 어드레스만 받는 API
+ShopMonitoring과 다르게 지정한 square에서만 특정 맥어드레스만 실시간 데이터를 받게됩니다.
+opts query는 아래와 같이 4개 필드 모두 설정 되어야 합니다.
+```
+opts.query = "user_email=" + "" +
+             "&user_token=" + "" +
+             "&square_mac=" + "" +
+             "&mac=" + "";
+```
