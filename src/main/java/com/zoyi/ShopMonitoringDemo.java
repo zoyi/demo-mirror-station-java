@@ -21,8 +21,7 @@ public class ShopMonitoringDemo {
     opts.reconnection = true;   // if you want to automatically reconnect, set true.
     opts.query = "user_email=" + "" +
                   "&user_token=" + "" +
-                  "&shop_id=" + "" +
-                  "&mac=" + "";
+                  "&shop_id=" + "";
     opts.path = ApplicationHelper.getSensorPath();
 
     socket = IO.socket(ApplicationHelper.getShopMonitoringURL(), opts);
@@ -31,6 +30,8 @@ public class ShopMonitoringDemo {
       @Override
       public void call(Object... args) {
         System.out.println("connected");
+        socket.emit("join", "001122334455");  // Emit a MAC Address of target monitoring device.
+
       }
     }).on(Socket.EVENT_CONNECT_ERROR, new Emitter.Listener() {
       @Override
