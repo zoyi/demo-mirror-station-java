@@ -51,7 +51,7 @@ socket.emit("join", "001122334455");
 
 해당 스퀘어의 특정(target)맥 어드레스만 받는 API
 ShopMonitoring과 다르게 지정한 square에서만 특정 맥어드레스만 실시간 데이터를 받게됩니다.
-opts query는 아래와 같이 4개 필드 모두 설정 되어야 합니다.
+opts query는 아래와 같이 3개 필드 모두 설정 되어야 합니다.
 ```
 opts.query = "user_email=" + "" +
              "&user_token=" + "" +
