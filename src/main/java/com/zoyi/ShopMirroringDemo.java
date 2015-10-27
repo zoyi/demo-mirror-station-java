@@ -1,8 +1,8 @@
 package com.zoyi;
 
-import com.github.nkzawa.emitter.Emitter;
-import com.github.nkzawa.socketio.client.IO;
-import com.github.nkzawa.socketio.client.Socket;
+import io.socket.client.IO;
+import io.socket.client.Socket;
+import io.socket.emitter.Emitter;
 import org.json.JSONObject;
 
 import java.net.URISyntaxException;
@@ -24,30 +24,24 @@ public class ShopMirroringDemo {
     socket = IO.socket(ApplicationHelper.getShopMirroingURL(), opts);
 
     socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
-      @Override
       public void call(Object... args) {
         System.out.println("connected");
       }
     }).on(Socket.EVENT_CONNECT_ERROR, new Emitter.Listener() {
-      @Override
       public void call(Object... args) {
         System.out.println("fail to connect");
       }
     }).on(Socket.EVENT_ERROR, new Emitter.Listener() {
-      @Override
       public void call(Object... args) {
         System.out.println("error");
         System.out.println(args[0]);
         socket.close();
       }
     }).on(Socket.EVENT_DISCONNECT, new Emitter.Listener() {
-      @Override
       public void call(Object... args) {
         System.out.println("disconnected");
       }
     }).on(ApplicationHelper.SIGNAL_EVENT, new Emitter.Listener() {
-
-      @Override
       public void call(Object... args) {
         JSONObject obj = (JSONObject) args[0];
         System.out.println(obj);
